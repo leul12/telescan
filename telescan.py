@@ -1,16 +1,12 @@
 import time, sys
-
+from telethon import TelegramClient
 from colorama import init, Fore, Style
 from pyrogram import Client
 from pyrogram.errors import BadRequest, FloodWait, UnknownError
 from tqdm import tqdm
-
-cFile = sys.argv[1]
-app = Client(
-    config_file=cFile,
-    session_name=cFile.split('.')[0]
-)
-
+api_id = 123456
+api_hash = 'abcd1234567890abcd'
+app = TelegramClient('session_name', api_id, api_hash)
 init(autoreset=True)
 print(Fore.CYAN + """
 ████████╗███████╗██╗     ███████╗███████╗ ██████╗ █████╗ ███╗   ██╗
